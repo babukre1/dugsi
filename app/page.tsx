@@ -15,6 +15,7 @@ import {
   Menu,
   Bell,
   ShieldCheck,
+  ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -247,43 +248,95 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core Features */}
-
-      <section className="py-20 px-6 max-w-7xl mx-auto bg-white">
-        <div className="text-center mb-16 space-y-4">
-          <span className="px-4 py-1.5 rounded-full bg-[#1A365D]/5 text-[#1A365D] text-sm font-bold uppercase tracking-wider">
-            Why Choose Dugsi
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-black text-[#1A365D]">
-            Everything you need,{" "}
-            <span className="text-[#48BB78]">nothing you don't.</span>
-          </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            Powerful tools designed to streamline school operations and enhance
-            the learning experience for everyone.
-          </p>
+      <section id="features" className="py-24 px-6 max-w-7xl mx-auto bg-white">
+        {/* Header - Left Aligned for a more editorial, human feel */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+          <div className="max-w-2xl">
+            <h2 className="text-5xl font-black text-[#1A365D] leading-[1.1] mb-6">
+              Designed for the <br />
+              <span className="text-[#48BB78]">rhythm of school life.</span>
+            </h2>
+            <p className="text-slate-500 text-lg">
+              We didn't just build a database. We built a digital home for your
+              teachers, students, and parents to stay connected.
+            </p>
+          </div>
+          <div className="hidden lg:block">
+            <button className="flex items-center gap-2 text-[#1A365D] font-bold border-b-2 border-[#48BB78] pb-1 hover:gap-4 transition-all">
+              Explore all modules <ArrowRight size={20} />
+            </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group bg-white p-10 rounded-[32px] border border-slate-100 hover:border-[#48BB78]/30 hover:shadow-xl transition-all duration-300"
-            >
-              <div
-                className={`w-14 h-14 ${feature.accent} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
-              >
-                {feature.icon}
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          {/* Main Feature - Large Card */}
+          <div className="md:col-span-8 bg-[#F8FAFC] rounded-[40px] p-10 flex flex-col justify-between group overflow-hidden relative border border-slate-100 hover:shadow-2xl hover:shadow-slate-200/50 transition-all">
+            <div className="max-w-md relative z-10">
+              <div className="w-12 h-12 bg-[#1A365D] rounded-2xl flex items-center justify-center mb-6 text-white">
+                <Users size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-[#1A365D] mb-4">
-                {feature.title}
+              <h3 className="text-3xl font-bold text-[#1A365D] mb-4">
+                Total Institutional Control
               </h3>
-              <p className="text-slate-500 leading-relaxed text-lg">
-                {feature.description}
+              <p className="text-slate-500 text-lg">
+                Manage every aspect of your school from a single dashboard.
+                Assign roles, track attendance, and monitor performance without
+                breaking a sweat.
               </p>
-              <div className="mt-6 w-12 h-1 bg-slate-100 group-hover:bg-[#48BB78] group-hover:w-24 transition-all duration-300 rounded-full" />
             </div>
-          ))}
+            {/* Subtle decorative element to make it feel "designed" */}
+            <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-[#48BB78]/5 rounded-full blur-3xl group-hover:bg-[#48BB78]/10 transition-all" />
+          </div>
+
+          {/* Small Feature 1 */}
+          <div className="md:col-span-4 bg-[#1A365D] rounded-[40px] p-10 text-white flex flex-col justify-between hover:scale-[1.02] transition-transform">
+            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+              <ShieldCheck size={24} className="text-[#48BB78]" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Secure by Default</h3>
+              <p className="text-slate-300 text-sm">
+                Bank-grade encryption for all student records and financial
+                data.
+              </p>
+            </div>
+          </div>
+
+          {/* Small Feature 2 */}
+          <div className="md:col-span-4 border-2 border-slate-50 rounded-[40px] p-10 flex flex-col justify-between hover:bg-slate-50 transition-colors">
+            <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 text-orange-600">
+              <Bell size={24} />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-[#1A365D] mb-2">
+                Smart Alerts
+              </h3>
+              <p className="text-slate-500 text-sm">
+                Instant WhatsApp and SMS notifications for fee reminders and
+                announcements.
+              </p>
+            </div>
+          </div>
+
+          {/* Medium Feature */}
+          <div className="md:col-span-8 bg-[#48BB78]/10 rounded-[40px] p-10 flex flex-col lg:flex-row items-center gap-8 border border-[#48BB78]/20">
+            <div className="flex-1">
+              <div className="w-12 h-12 bg-[#48BB78] rounded-2xl flex items-center justify-center mb-6 text-white">
+                <BookOpen size={24} />
+              </div>
+              <h3 className="text-3xl font-bold text-[#1A365D] mb-4">
+                Academic Tracker
+              </h3>
+              <p className="text-slate-600">
+                Visualize student progress over time with smart charts and
+                automated report cards.
+              </p>
+            </div>
+            <div className="w-full lg:w-1/3 h-32 bg-white/50 rounded-2xl border-2 border-dashed border-[#48BB78]/30 flex items-center justify-center text-[#48BB78] font-bold">
+              Analytics Preview
+            </div>
+          </div>
         </div>
       </section>
 

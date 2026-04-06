@@ -48,34 +48,48 @@ export default function Home() {
       </Head>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+      <nav className="fixed top-0 w-full z-50 bg-[#F7F7F7] backdrop-blur-xl ">
         <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[#1A365D] rounded-xl flex items-center justify-center text-white font-black text-xl">
-              D
-            </div>
-            <span className="text-2xl font-black text-[#1A365D] tracking-tighter">
-              dugsi
-            </span>
-          </div>
+          <Image
+            src={"/logo.svg"}
+            alt="logo"
+            width={200}
+            height={0}
+            style={{ height: "auto" }}
+          />
 
           <div className="hidden md:flex gap-8 items-center">
-            {["Features", "About", "Contact", "Resources"].map((item) => (
-              <a
-                key={item}
-                className="text-slate-600 font-semibold hover:text-[#1A365D] transition-colors"
-                href={`#${item.toLowerCase()}`}
-              >
-                {item}
-              </a>
-            ))}
+            <a
+              className="text-[#1A365D] font-bold border-b-2 border-[#1A365D] transition-colors"
+              href="#features"
+            >
+              Features
+            </a>
+            <a
+              className="text-slate-600 font-medium hover:text-[#1A365D] transition-colors"
+              href="#curriculum"
+            >
+              About
+            </a>
+            <a
+              className="text-slate-600 font-medium hover:text-[#1A365D] transition-colors"
+              href="#pricing"
+            >
+              Contact
+            </a>
+            <a
+              className="text-slate-600 font-medium hover:text-[#1A365D] transition-colors"
+              href="#resources"
+            >
+              Resources
+            </a>
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="hidden md:block text-[#1A365D] font-bold px-4 py-2 hover:opacity-70 transition-all">
+            <button className="hidden md:block text-slate-600 font-medium px-4 py-2 hover:text-[#1A365D] transition-all">
               Login
             </button>
-            <button className="bg-[#48BB78] text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-[#48BB78]/30 active:scale-95 transition-all">
+            <button className="bg-[#48BB78] text-white px-6 py-2.5 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-[#48BB78]/20">
               Get Started
             </button>
             <button className="md:hidden text-[#1A365D]">

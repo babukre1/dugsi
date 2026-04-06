@@ -264,7 +264,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-12 max-w-7xl mx-auto mt-24">
+      <section className="px-6 py-12 max-w-7xl mx-auto">
         {/* Main Container - Updated to Brand Navy Blue */}
         <div className="relative bg-[#1A365D] rounded-[40px] flex flex-col lg:flex-row items-center px-8 lg:px-20 py-8 lg:py-14 min-h-[500px] overflow-hidden lg:overflow-visible">
           {/* Background Watermark Text */}
@@ -280,7 +280,7 @@ export default function Home() {
               Join the educational revolution — simple, secure, rewarding
             </p>
 
-            <h2 className="text-4xl lg:text-7xl font-bold leading-[1.1]">
+            <h2 className="text-4xl lg:text-6xl font-bold leading-[1.1]">
               Start Managing <br />
               Schools with <br />
               <span className="text-[#48BB78]">Dugsi</span> Today
@@ -295,7 +295,7 @@ export default function Home() {
           </div>
 
           {/* Right Image Side */}
-          <div className="relative z-10 lg:absolute lg:-right-10 lg:-bottom-12 w-full lg:w-[40%] h-[400px] lg:h-[110%] flex justify-center items-end">
+          <div className="relative z-10 lg:absolute lg:-right-10 lg:-bottom-12 w-full lg:w-[40%] h-[400px] lg:h-[100%] flex justify-center items-end">
             <div className="relative w-full h-full">
               <Image
                 src="/holding-phone.svg"

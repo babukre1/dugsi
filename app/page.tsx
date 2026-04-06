@@ -100,26 +100,24 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <header className="pt-28 pb-20 px-8 max-w-7xl mx-auto overflow-hidden">
+      <header className="pt-16 pb-12 px-8 max-w-7xl mx-auto overflow-hidden">
         {/* Flex container: Column by default (mobile), Row on large screens */}
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           {/* Text Content: flex-1 ensures it takes up equal space */}
-          <div className="flex-1 space-y-8 text-center lg:text-left">
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-[#1A365D] leading-[1.1] tracking-tight">
+          <div className="flex-1 space-y-6 text-center lg:text-left">
+            <h1 className="text-6xl lg:text-[55px] font-black text-[#1A365D] leading-tight tracking-tight">
               Manage Your School. <br />
               <span className="text-[#48BB78]">Instantly.</span> Seamlessly.
             </h1>
-            <p className="text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              From registration to report cards, dugsi unifies your entire
-              institution on one powerful, mobile-first platform. Built for the
-              modern educational curator.
+            <p className="text-lg text-slate-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              Dugsi unifies your entire institution on one powerful,
+              mobile-first platform built for modern educators.
             </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-              <button className="bg-[#1A365D] text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 hover:bg-[#002045] transition-all active:scale-95 shadow-xl shadow-[#1A365D]/10">
-                Download Now
-                <Download size={20} />
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+              <button className="bg-[#1A365D] text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-[#002045] transition-all">
+                Download Now <Download size={18} />
               </button>
-              <button className="border-2 border-slate-200 text-[#1A365D] px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all">
+              <button className="border-2 border-slate-200 text-[#1A365D] px-6 py-3 rounded-xl font-bold hover:bg-slate-50 transition-all">
                 Book a Demo
               </button>
             </div>
@@ -141,40 +139,44 @@ export default function Home() {
       </header>
 
       {/* Why Choose Us - Streamlined */}
-      <section id="about" className="py-24 px-6 bg-slate-50/50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h3 className="text-[#48BB78] font-bold tracking-widest uppercase text-xs">
+      <section id="about" className="py-16 px-6 bg-slate-50/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 space-y-3">
+            <h3 className="text-[#48BB78] font-bold tracking-widest uppercase text-[10px]">
               The Dugsi Difference
             </h3>
-            <h2 className="text-4xl md:text-5xl font-black text-[#1A365D]">
+            <h2 className="text-3xl md:text-4xl font-black text-[#1A365D]">
               A partner in your growth.
             </h2>
           </div>
 
-          <div className="grid gap-6">
+          {/* Updated to a 3-column grid for moderate sizing */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="group flex flex-col md:flex-row gap-6 p-8 rounded-[32px] bg-white border border-slate-100 hover:border-[#48BB78]/30 hover:shadow-xl transition-all duration-300"
+                className="group flex flex-col gap-5 p-6 rounded-2xl bg-white border border-slate-100 hover:border-[#48BB78]/30 hover:shadow-lg transition-all duration-300"
               >
                 <div
-                  className={`shrink-0 w-14 h-14 ${item.color} rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform`}
+                  className={`shrink-0 w-12 h-12 ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}
                 >
                   {React.cloneElement(item.icon as React.ReactElement, {
-                    size: 28,
+                    size: 22, // Moderated icon size
                   })}
                 </div>
+
                 <div className="space-y-2">
-                  <h4 className="text-[#1A365D] font-bold text-2xl group-hover:text-[#48BB78] transition-colors">
+                  <h4 className="text-[#1A365D] font-bold text-xl group-hover:text-[#48BB78] transition-colors">
                     {item.title}
                   </h4>
-                  <p className="text-slate-500 text-lg leading-relaxed">
+                  <p className="text-slate-500 text-sm leading-relaxed">
                     {item.description}
                   </p>
                 </div>
-                <div className="md:ml-auto flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowRight className="text-[#48BB78]" size={24} />
+
+                <div className="mt-auto pt-4 flex items-center text-[#48BB78] text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span>Learn more</span>
+                  <ArrowRight className="ml-2" size={16} />
                 </div>
               </div>
             ))}

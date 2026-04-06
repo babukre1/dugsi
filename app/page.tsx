@@ -43,62 +43,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-[#48BB78] selection:text-white">
-      <Head>
-        <title>Dugsi | Modern School Management</title>
-      </Head>
-
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#F7F7F7] backdrop-blur-xl ">
-        <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-          <Image
-            src={"/logo.svg"}
-            alt="logo"
-            width={200}
-            height={0}
-            style={{ height: "auto" }}
-          />
-
-          <div className="hidden md:flex gap-8 items-center">
-            <a
-              className="text-[#1A365D] font-bold border-b-2 border-[#1A365D] transition-colors"
-              href="#features"
-            >
-              Features
-            </a>
-            <a
-              className="text-slate-600 font-medium hover:text-[#1A365D] transition-colors"
-              href="#curriculum"
-            >
-              About
-            </a>
-            <a
-              className="text-slate-600 font-medium hover:text-[#1A365D] transition-colors"
-              href="#pricing"
-            >
-              Contact
-            </a>
-            <a
-              className="text-slate-600 font-medium hover:text-[#1A365D] transition-colors"
-              href="#resources"
-            >
-              Resources
-            </a>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <button className="hidden md:block text-slate-600 font-medium px-4 py-2 hover:text-[#1A365D] transition-all">
-              Login
-            </button>
-            <button className="bg-[#48BB78] text-white px-6 py-2.5 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-[#48BB78]/20">
-              Get Started
-            </button>
-            <button className="md:hidden text-[#1A365D]">
-              <Menu size={24} />
-            </button>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <header className="pt-16 pb-12 px-8 max-w-7xl mx-auto overflow-hidden">
         {/* Flex container: Column by default (mobile), Row on large screens */}

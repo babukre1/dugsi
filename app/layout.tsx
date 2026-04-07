@@ -54,7 +54,7 @@ export default function RootLayout({
             <div className="hidden md:flex gap-8 items-center">
               <a
                 className="text-[#1A365D] font-bold border-b-2 border-[#1A365D] transition-colors"
-                href="#"
+                href="/"
               >
                 Home
               </a>

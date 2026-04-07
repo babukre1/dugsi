@@ -104,9 +104,12 @@ export default function Home() {
                 <div
                   className={`shrink-0 w-12 h-12 ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}
                 >
-                  {React.cloneElement(item.icon as React.ReactElement, {
-                    size: 22, // Moderated icon size
-                  })}
+                  {React.cloneElement(
+                    item.icon as React.ReactElement,
+                    // {
+                    //   size: 22, // Moderated icon size
+                    // }
+                  )}
                 </div>
 
                 <div className="space-y-2">

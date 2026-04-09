@@ -13,11 +13,11 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
-    { name: "Resources", href: "/resources" },
+    // { name: "Resources", href: "/resources" },
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#F7F7F7]/80 backdrop-blur-xl border-b border-gray-200">
+    <nav className="fixed top-0 w-full z-50 bg-[#F7F7F7]  border-b border-gray-200">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex-shrink-0">
@@ -59,7 +59,7 @@ export default function Navbar() {
           <button className="hidden md:block text-slate-600 font-medium px-4 py-2 hover:text-[#1A365D] transition-all">
             Login
           </button>
-          
+
           <button className="hidden md:block bg-[#48BB78] text-white rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-[#48BB78]/20 px-6 py-2.5">
             Get Started
           </button>
@@ -77,7 +77,9 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div
         className={`md:hidden absolute top-full left-0 w-full bg-[#F7F7F7] border-b border-gray-200 transition-all duration-300 ease-in-out ${
-          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+          isOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
         <div className="flex flex-col p-6 gap-4">
@@ -88,7 +90,9 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={`text-lg transition-colors ${
-                  isActive ? "text-[#1A365D] font-bold" : "text-slate-600 font-medium"
+                  isActive
+                    ? "text-[#1A365D] font-bold"
+                    : "text-slate-600 font-medium"
                 }`}
                 onClick={() => setIsOpen(false)}
               >

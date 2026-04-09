@@ -46,7 +46,7 @@ const ContactPage = () => {
                 For general inquiries and partnerships.
               </p>
               <a
-                href="mailto:hello@dugsi.edu"
+                href="mailto:info@dugsi.so"
                 className="font-bold text-[#1A365D] flex items-center gap-2 group-hover:text-[#48BB78] transition-colors"
               >
                 hello@dugsi.edu <ArrowUpRight size={16} />

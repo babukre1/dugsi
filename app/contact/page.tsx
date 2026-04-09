@@ -74,7 +74,7 @@ const ContactPage = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Amina Omar"
                   className="w-full p-4 rounded-2xl bg-slate-50 border-transparent focus:bg-white focus:border-[#48BB78]/20 focus:ring-0 transition-all outline-none"
                 />
               </div>

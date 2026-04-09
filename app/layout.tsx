@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
-import { Menu } from "lucide-react";
+import { Menu, Play, Send, Smartphone } from "lucide-react";
 import Image from "next/image";
 
 const geistSans = Geist({
@@ -92,6 +92,71 @@ export default function RootLayout({
           </div>
         </nav>
         {children}
+        <footer className="bg-slate-900 pt-24 pb-12 text-white">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 px-8 max-w-7xl mx-auto">
+            <div className="space-y-6">
+              <div className="text-3xl font-black tracking-tighter">dugsi</div>
+              <p className="text-slate-400 leading-relaxed text-sm">
+                Pioneering the next generation of school management systems.
+              </p>
+              <div className="flex gap-3">
+                <button className="bg-white/5 p-3 rounded-xl hover:bg-white/10 transition-all">
+                  <Smartphone size={18} />
+                </button>
+                <button className="bg-white/5 p-3 rounded-xl hover:bg-white/10 transition-all">
+                  <Play size={18} />
+                </button>
+              </div>
+            </div>
+
+            {[
+              {
+                title: "Product",
+                links: ["Features", "Pricing", "Parent Portal"],
+              },
+              {
+                title: "Legal",
+                links: ["Privacy Policy", "Terms of Service", "Support"],
+              },
+            ].map((col) => (
+              <div key={col.title} className="space-y-6">
+                <h4 className="font-bold uppercase tracking-widest text-xs text-slate-500">
+                  {col.title}
+                </h4>
+                <ul className="space-y-4 text-slate-400 font-medium">
+                  {col.links.map((link) => (
+                    <li key={link}>
+                      <a
+                        className="hover:text-[#48BB78] transition-all"
+                        href="#"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            <div className="space-y-6">
+              <h4 className="font-bold uppercase tracking-widest text-xs text-slate-500">
+                Stay Updated
+              </h4>
+              <div className="flex gap-2 bg-white/5 p-2 rounded-2xl focus-within:ring-2 ring-[#48BB78] transition-all">
+                <input
+                  className="bg-transparent border-none p-2 text-sm w-full outline-none"
+                  placeholder="Enter your email"
+                />
+                <button className="bg-[#48BB78] text-white p-3 rounded-xl">
+                  <Send size={18} />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="max-w-7xl mx-auto px-8 mt-24 pt-8 border-t border-white/5 text-center text-slate-500 text-sm">
+            © 2026 Dugsi School Management. All rights reserved.
+          </div>
+        </footer>
       </body>
     </html>
   );
